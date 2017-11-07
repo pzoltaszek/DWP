@@ -1,2 +1,3 @@
 # DWP
-Strona w budowie...
+WebContent folder = pliki JSP i CSS
+
