@@ -1,6 +1,10 @@
 # DWP
 Strona w budowie!
 ******************************
+Info:
+Server: Tomcat 9.0
+DB: Mysql
+******************************
 07-11-2017:
 DWP - Dynamic web Project o nazwie Strona.
 WebContent folder = pliki JSP i CSS
