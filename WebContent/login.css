@@ -1,0 +1,60 @@
+html, body {
+margin:0;
+padding:0;
+}
+
+html {
+height: 100%;
+}
+
+
+body {
+background-color="white";
+min-height: 100%;
+position:relative;
+margin: 0 auto;
+}
+
+#tabelka_form{
+height: 200px;
+align: center;
+valign: middle;
+vertical-align: middle
+background-color: grey;
+color: white;
+font-weight: bold;
+margin: 0 auto;
+}
+div{
+width: 100%;
+background-color: grey;
+valign: middle;
+vertical-align: middle
+}
+
+#pole{
+min-height: 40px;
+}
+
+#tabelaf{
+background-color:#c0c0c0;
+min-width:100%;
+margin: 0 auto;
+bottom:0;
+position:absolute;
+}
+
+#kolko{
+
+padding:5px;
+width: 7px;
+height: 7px;
+background-color: #c0c0c0;
+animation-name: colorchange;
+animation-duration:1.3s;
+animation-iteration-count: infinite;
+}
+@keyframes colorchange {
+0% {background-color: green;}
+100% {backgroundcolor:green;}
+}

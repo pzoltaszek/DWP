@@ -1,0 +1,119 @@
+html, body {
+margin:0;
+padding:0;
+}
+
+html {
+height: 100%;
+}
+
+
+body {
+background-color="white";
+min-height: 100%;
+position:relative;
+margin: 0 auto;
+}
+
+
+nav{
+
+padding: 10px 10px;
+min-width:75%;
+max-width:75%;
+margin: 0 auto;
+
+}
+
+nav ul{
+border: 1px solid grey;
+border-radius:3px;
+box-shadow: 0 0 25px #66CCFF,
+inset 0 0 1px rgba(255, 255, 255, 0.6);
+text-align: center;
+background-color: #66CCFF;
+}
+
+
+nav ul li {
+display: inline-block;
+}
+
+nav ul li a {
+
+padding: 10px;
+color:#333333;
+font-size: 18px;
+font-family: Arial;
+font-weight:bold;
+text-decoration: none;
+display:block;
+}
+
+a{
+color: #333333;
+}
+
+
+#tabela{
+min-width:85%;
+max-width:85%;
+margin: 0 auto;
+}
+
+#zaloguj {
+color:red;
+text-decoration: none;
+}
+
+
+#home {
+text-decoration: none;
+}
+
+
+fieldset {
+padding: 10px 10px;
+min-width:85%;
+max-width:85%;
+margin: 0 auto;
+color: #333333;
+box-shadow: 0 0 25px #66CCFF,
+inset 0 0 1px rgba(255, 255, 255, 0.6);
+background-color: #66CCFF;
+
+}
+
+#przycisk{
+display:block;
+text-decoration: none;
+align: center;
+}
+
+#pole{
+min-height: 40px;
+}
+
+#tabelaf{
+background-color:#c0c0c0;
+min-width:100%;
+margin: 0 auto;
+bottom:0;
+position:absolute;
+
+}
+
+div{
+
+padding:5px;
+width: 7px;
+height: 7px;
+background-color: #c0c0c0;
+animation-name: colorchange;
+animation-duration:1.3s;
+animation-iteration-count: infinite;
+}
+@keyframes colorchange {
+0% {background-color: green;}
+100% {backgroundcolor:green;}
+}
