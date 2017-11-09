@@ -12,3 +12,5 @@ src = pliki java
 plikow jar: connector msql, taglib (jstl) nie umieszczono
 Plik Web.xml oryginalni znajduje sie w katalogu /WebContent/WEB-INF
 ******************************
+09-11-2017:
+Poprawiono błędy przy rejestracji
