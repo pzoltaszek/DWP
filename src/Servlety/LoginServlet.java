@@ -19,8 +19,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import pz.strona.Bean.Data;
+import pz.strona.Bean.LicznikOdwiedzin;
 import pz.strona.Bean.User;
 import pz.strona.DAO.UserDAO;
+import pz.strona.DAO.licznikOdwiedzinDAO;
 
 @WebServlet("/witaj")
 public class LoginServlet extends HttpServlet {
@@ -36,7 +38,7 @@ public class LoginServlet extends HttpServlet {
 		HttpSession session = req.getSession();
 		RequestDispatcher rdError = req.getRequestDispatcher("/error.jsp");
 		RequestDispatcher rdIndex = req.getRequestDispatcher("/index.jsp");
-
+	
 		// ****************** formularz logowania *******************
 		imiePobrane = req.getParameter("loginp");
 		hasloPobrane = req.getParameter("passwordp");
@@ -51,6 +53,19 @@ public class LoginServlet extends HttpServlet {
 		Cookie imieCookie = new Cookie("imieCookie", imiePobrane);
 		imieCookie.setMaxAge(24 * 60 * 60); // w sek
 		res.addCookie(imieCookie);
+		
+		//*******************Licznik odwiedzin*********
+		
+		licznikOdwiedzinDAO lodao = new licznikOdwiedzinDAO();
+		LicznikOdwiedzin lo = new LicznikOdwiedzin();
+		
+		Integer licznikOdw = (Integer) lodao.getLicznikDB();
+		licznikOdw++;
+		//session.setAttribute("li", Integer.valueOf(licznikOdw));
+		
+		lo.setLicznikOdwiedzin(licznikOdw);
+		session.setAttribute("lo", lo);
+		lodao.setLicznikDB(licznikOdw);		
 
 		/*
 		 * //******************imie inaczej********************** StringBuffer s = new
@@ -83,7 +98,6 @@ public class LoginServlet extends HttpServlet {
 		pobraneLoginy2 = udao.getLoginyDB();
 		pobraneHasla2 = udao.getHaslaDB();
 		pobraneDaty2 = udao.getDatyDB();
-
 		
 
 		// ************ przekierowanie i warunek loginu ****************

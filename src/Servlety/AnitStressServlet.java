@@ -17,22 +17,26 @@ public class AnitStressServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
 		res.setContentType("text/html");
-		HttpSession session = req.getSession();
-		Integer licznikStress = 666;
-		String ddd = "ddd";
-
-		String buton = req.getParameter("Aaa");
-		/*if (buton!= null) {
-			licznikStress++;
-			buton = null;
-		}*/
-		session.setAttribute("licznikS", Integer.valueOf(licznikStress));
-		session.setAttribute("licz",licznikStress);
-		session.setAttribute("ddd",ddd);
-		session.setAttribute("but", buton);
-
-	//	RequestDispatcher rd = req.getRequestDispatcher("/trzecia.jsp");
-	//	rd.forward(req, res);
+		HttpSession session2 = req.getSession();
+		String buton = req.getParameter("aaa");
+		/*Integer aa = 123;
+		session2.setAttribute("aa", aa);*/
+	
+		Integer licznikS = (Integer) session2.getAttribute("licznikS");
+	
+		if (licznikS == null) {
+			licznikS = 1;
+		}
+			else {
+				licznikS++;
+				//session2.setAttribute("licznikS", Integer.valueOf(licznikS));
+			}
+		session2.setAttribute("licznikS", Integer.valueOf(licznikS));
+	
+if (buton != null) {
+		RequestDispatcher rd = req.getRequestDispatcher("/trzecia.jsp");
+		rd.forward(req, res);
+}
 	}
 
 	@Override
