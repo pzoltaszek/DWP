@@ -57,6 +57,7 @@ Witaj ${u.loginp}
 <fieldset>
 <legend>Powitanie</legend>
 <br>
+
 <br>
 
 <p> ${u.loginp}, witaj na stronie.</p>
@@ -69,7 +70,7 @@ Witaj ${u.loginp}
          out.print(ft.format(dNow)); %> 
       --%>
 </p>
-<p>Twój login: "<%= request.getParameter("loginp")%>"...</p>
+<p>Twój login: "${u.loginp}"...</p>
 <p>...składa sie z  ${fn:length(u.loginp)} znaków</p>
 
 <%-- <p>...zapisany od tyłu: <%= request.getParameter("s2")%></p> --%>
@@ -88,7 +89,7 @@ Witaj ${u.loginp}
 <table id="tabelaf">
 <tr>
 <td align="left">
-Licznik odwiedzin: 
+Licznik odwiedzin: ${lo.licznikOdwiedzin}
 </td>
 <td align="right">Status:</td>
 

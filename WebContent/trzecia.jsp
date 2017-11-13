@@ -61,22 +61,27 @@ Witaj ${u.loginp}
 <br>
 <hr/>
 <br>
-<p color="red"><h3>Strona W Budowie</h3></p>
 
 <p>Anti-stress button</p>
-<form name="antistressB" id="antistress" method="POST">
-<input type="hidden" name="Aaa"/>
+<form action="/Strona/drugi"  method="POST">
+<input type="hidden" name="aaa"/>
 <input name="antistrB" type=submit value="Click me"/>
 </form>
 
-Licznik: ${sessionScope.licznikS}
+Licznik: ${sessionScope.licznikS} <%-- 22. ${licznikS} --%>
 <br>
-Licznik2: ${sessionScope.licz}
-${param.but}
+
 <br>
-Licznik3: ${sessionScope.ddd}
+<c:if test="${licznikS > 3}">
+Zobacz co będzie przy 10!
+</c:if>
 <br>
-${sessionScope.adres} aaa
+<c:if test="${licznikS > 9}">
+Brawo, jeszcze 100 000 000 i wygrałeś!
+</c:if>
+<%-- 2.${aa}
+3.${sessionScope.aa}
+6.${sessionScope.adres} --%>
 <br><br>
 <hr/><p>Applet</p>
 <br><br>
@@ -90,7 +95,7 @@ ${sessionScope.adres} aaa
 <table id="tabelaf">
 <tr>
 <td align="left">
-Licznik odwiedzin: 10
+Licznik odwiedzin: ${lo.licznikOdwiedzin}
 </td>
 <td align="right">Status:</td>
 

@@ -12,7 +12,7 @@
 <p align="center"> <b>Rejestracja nowego użytkownika</b> <p>
 <div>
 <table id="tabelka_form" >
-<form action="/Strona/login.jsp" method="POST">
+<form action="/Strona/rej" method="POST">
 <tr align="center">
 <td width="50"><B>login: </B></td>
 <td width="50"><input name="loginr"></td>

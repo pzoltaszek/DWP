@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ page import="java.util.*" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -62,22 +63,28 @@ Witaj  ${u.loginp}
 <p> Zobacz liste wszystkich użytkwników</p>
 
 
-<form name="lista" id="lista" method="get">
+<form action="/Strona/lista" method="POST">
+<input type="hidden" name="listb">
 <input name="listaB" type=submit value="Zobacz liste">
+
 <br><br>
 </form>
 
 <table border="1" frame="void" cellpadding="10">
 <tr><td align="center"><b> ID </b></td> <td align="center"><b> nazwa </b></td> <td align="center"><b> od kiedy </b> </td> </tr>
 <tr><td> ID usera </td> <td> nazwa usera </td> <td> od kiedy jest z nami </td> </tr>
-</table>
+
+ </table><br>
+${lista2}
+
+
 </fieldset>
 
 <table id="pole"></table>
 <table id="tabelaf">
 <tr>
 <td align="left">
-Licznik odwiedzin: 10
+Licznik odwiedzin: ${lo.licznikOdwiedzin}
 </td>
 <td align="right">Status:</td>
 

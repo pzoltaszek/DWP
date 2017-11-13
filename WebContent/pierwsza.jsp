@@ -88,7 +88,7 @@ Witaj ${u.loginp}
 <table id="tabelaf">
 <tr>
 <td align="left">
-Licznik odwiedzin: 
+Licznik odwiedzin: ${lo.licznikOdwiedzin}
 </td>
 <td align="right">Status:</td>
 
