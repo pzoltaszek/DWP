@@ -14,7 +14,7 @@ public class UserDAO {
 	final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
 	final String DB_URL = "jdbc:mysql://localhost:3306/uzytkownicy";
 
-	// uwierzytelnianie bazy - czy mżna jakoś ukryć hasło ?
+	
 	final String USER = "p.zoltaszek";
 	final String PASS = "piti";
 	ArrayList<String> pobraneUser = new ArrayList<String>();
