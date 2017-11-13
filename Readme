@@ -14,3 +14,9 @@ Plik Web.xml oryginalni znajduje sie w katalogu /WebContent/WEB-INF
 ******************************
 09-11-2017:
 Poprawiono błędy przy rejestracji
+****************************************
+12-11-2017:
+Nowe rzeczy:
+- licznik odwiedzin
+- anty-stress button
+- lista użytkowników - działa ale do poprawy
