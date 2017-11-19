@@ -29,6 +29,7 @@ public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	String imiePobrane;
 	String hasloPobrane;
+	String wyloguj;
 	
 
 	@Override
@@ -38,6 +39,7 @@ public class LoginServlet extends HttpServlet {
 		HttpSession session = req.getSession();
 		RequestDispatcher rdError = req.getRequestDispatcher("/error.jsp");
 		RequestDispatcher rdIndex = req.getRequestDispatcher("/index.jsp");
+		RequestDispatcher rdLogin = req.getRequestDispatcher("/login.jsp");
 	
 		// ****************** formularz logowania *******************
 		imiePobrane = req.getParameter("loginp");
@@ -133,6 +135,21 @@ public class LoginServlet extends HttpServlet {
 			}
 		}
 		rdError.forward(req, res);
+		//************************* logout
+		wyloguj = req.getParameter("logout");
+		if(wyloguj.equals("logout")) {
+			
+			session.setAttribute("u", null);
+			session.setAttribute("lo", null);
+			session.setAttribute("idzDB", null);
+			session.setAttribute("loginzDB", null);
+			session.setAttribute("passzDB", null);
+			session.setAttribute("datazDB", null);
+			session.invalidate();
+			rdLogin.forward(req, res);
+			
+		}
+		
 	}
 
 	@Override
