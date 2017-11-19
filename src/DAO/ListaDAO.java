@@ -31,7 +31,7 @@ public class ListaDAO {
 		int z = pobraneId3.size();
 
 		for (int d = 0; d < z; d++) {
-			listaAll.add(new UserList(pobraneId3.get(d), pobraneLoginy3.get(d), pobraneDaty3.get(d)));
+			listaAll.add(new UserList(pobraneId3.get(d), pobraneLoginy3.get(d), pobraneDaty3.get(d) +"\n"));
 		}
 
 		return listaAll;
