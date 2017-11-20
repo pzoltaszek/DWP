@@ -19,6 +19,8 @@ import pz.strona.DAO.WpisDAO;
 public class WpisServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
+	String bladWpisu = "Nie uzupełniłeś wszystkich pól";
+	String wpisDodany = "Twój wpis został dodany, będzie widoczny następnym razem";
 	String nickP;
 	String trescP;
 	String dataP;
@@ -61,13 +63,15 @@ public class WpisServlet extends HttpServlet {
 		trescP = request.getParameter("tresc");
 		dataP = nowaData.getAktualnaData();
 		//zapisuje nowy wpis do DB:
-		if(nickP!= null && trescP!= null) {
-		wpisyDB.setWpis(nickP, trescP, dataP);
-		}
-		// forwarduje na stone;
-		rdCzwarta.forward(request, response);
 		
-		
+		if(nickP == null || trescP== null || nickP == "" || trescP =="") {
+			request.setAttribute("bladWpisu", bladWpisu);
+			rdCzwarta.forward(request, response);
+		} else {
+			request.setAttribute("wpisDodany", wpisDodany);
+			wpisyDB.setWpis(nickP, trescP, dataP);
+			rdCzwarta.forward(request, response);
+		}		
 	}
 
 }

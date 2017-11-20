@@ -101,6 +101,12 @@ public class LoginServlet extends HttpServlet {
 		pobraneHasla2 = udao.getHaslaDB();
 		pobraneDaty2 = udao.getDatyDB();
 		
+		//************************* logout
+				wyloguj = req.getParameter("logout");
+				if(wyloguj!= null) {	
+					session.invalidate();
+					rdLogin.forward(req, res);	
+				}
 
 		// ************ przekierowanie i warunek loginu ****************
 
@@ -135,20 +141,7 @@ public class LoginServlet extends HttpServlet {
 			}
 		}
 		rdError.forward(req, res);
-		//************************* logout
-		wyloguj = req.getParameter("logout");
-		if(wyloguj.equals("logout")) {
-			
-			session.setAttribute("u", null);
-			session.setAttribute("lo", null);
-			session.setAttribute("idzDB", null);
-			session.setAttribute("loginzDB", null);
-			session.setAttribute("passzDB", null);
-			session.setAttribute("datazDB", null);
-			session.invalidate();
-			rdLogin.forward(req, res);
-			
-		}
+		
 		
 	}
 
