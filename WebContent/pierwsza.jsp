@@ -8,15 +8,15 @@
 <head>
  <c:choose>
          
-         <c:when test = "${param.kolor eq 'grey'}">
+         <c:when test = "${sessionScope.kolor eq 'grey'}">
             <link rel="stylesheet" href="grey.css">
          </c:when>
          
-         <c:when test = "${param.kolor eq 'black'}">
+         <c:when test = "${sessionScope.kolor eq 'black'}">
             <link rel="stylesheet" href="black.css">
          </c:when>
          
-          <c:when test = "${param.kolor eq 'blue'}">
+          <c:when test = "${sessionScope.kolor eq 'blue'}">
             <link rel="stylesheet" href="blue.css">
          </c:when>
          
@@ -40,7 +40,9 @@
 </td>
 
 <td align="right">
-Witaj ${u.loginp}
+Witaj ${u.loginp} <form action="/Strona/witaj" method="POST">
+<input type="hidden" name="logout">
+<input name="logout" type=submit value="Wyloguj"></form>
 </td>
 </tr>
 </table>
@@ -64,9 +66,9 @@ Witaj ${u.loginp}
 <tr><td>${sessionScope.idzDB}</td> <td> ${sessionScope.loginzDB}</td> <td>${sessionScope.datazDB}</td> </tr>
 </table>
 <br><br>
-<hr /> Wybrałeś wygląd: ${param.kolor}
+<hr /> Wybrałeś wygląd: ${param.kolor} 2. ${cookie.imieCookie.value} 3. ${cookie.kolorCookie.value} 4. ${sessionScope.kolor}
 <br><br>
-<form name="wyglad" method= "GET">
+<form name="wyglad" action="/Strona/pierszy" method= "GET">
 
 <B>Wybierz wygląd strony:</B>
 <select name="kolor" size="1">

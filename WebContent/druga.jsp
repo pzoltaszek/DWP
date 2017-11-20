@@ -9,15 +9,15 @@
 <head>
 <c:choose>
          
-         <c:when test = "${param.kolor eq 'grey'}">
+         <c:when test = "${sessionScope.kolor eq 'grey'}">
             <link rel="stylesheet" href="grey.css">
          </c:when>
          
-         <c:when test = "${param.kolor eq 'black'}">
+         <c:when test = "${sessionScope.kolor eq 'black'}">
             <link rel="stylesheet" href="black.css">
          </c:when>
          
-          <c:when test = "${param.kolor eq 'blue'}">
+          <c:when test = "${sessionScope.kolor eq 'blue'}">
             <link rel="stylesheet" href="blue.css">
          </c:when>
          
@@ -37,7 +37,9 @@
 </td>
 
 <td align="right">
-Witaj  ${u.loginp} 
+Witaj  ${u.loginp} <form action="/Strona/witaj" method="POST">
+<input type="hidden" name="logout">
+<input name="logout" type=submit value="Wyloguj"></form>
 </td>
 </tr>
 </table>
@@ -70,13 +72,18 @@ Witaj  ${u.loginp}
 <br><br>
 </form>
 
+<%-- ${lista2} --%>
+
+<hr><br>
 <table border="1" frame="void" cellpadding="10">
-<tr><td align="center"><b> ID </b></td> <td align="center"><b> nazwa </b></td> <td align="center"><b> od kiedy </b> </td> </tr>
-<tr><td> ID usera </td> <td> nazwa usera </td> <td> od kiedy jest z nami </td> </tr>
+<c:forEach var = "listaa" items="${lista2}">
+<tr>
+<td>${listaa}</td>
 
- </table><br>
-${lista2}
 
+</tr>
+</c:forEach>
+</table>
 
 </fieldset>
 
